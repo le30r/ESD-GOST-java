@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="548.0" prefWidth="835.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.electronicdigitalsignature.controllers.EDSController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <AnchorPane prefHeight="528.0" prefWidth="795.0">
+         <children>
+            <Button fx:id="generateBtn" layoutX="26.0" layoutY="174.0" mnemonicParsing="false" onAction="#onGenerateButtonClick" prefHeight="25.0" prefWidth="310.0" text="Сгенерировать пару ключей" />
+            <TextField fx:id="privateKeyW" layoutX="26.0" layoutY="27.0" prefHeight="25.0" prefWidth="310.0" promptText="privateKey.w" />
+            <TextField fx:id="publicKeyLeftP" layoutX="26.0" layoutY="73.0" prefHeight="25.0" prefWidth="310.0" promptText="publicKey.p" />
+            <TextArea fx:id="messageAreaLeft" layoutX="26.0" layoutY="199.0" prefHeight="200.0" prefWidth="310.0" promptText="Message" />
+            <Button fx:id="signBtn" layoutX="26.0" layoutY="466.0" mnemonicParsing="false" onAction="#onSignButtonClick" prefHeight="25.0" prefWidth="310.0" text="Подписать" />
+            <Button layoutX="372.0" layoutY="206.0" mnemonicParsing="false" onAction="#onCopyAction" text="Copy -&gt;" />
+            <TextField fx:id="publicKeyRightP" layoutX="462.0" layoutY="73.0" prefHeight="25.0" prefWidth="310.0" promptText="PublicKey.p" />
+            <Button fx:id="checkSignBtn" layoutX="462.0" layoutY="466.0" mnemonicParsing="false" onAction="#onCheckSignAction" prefHeight="25.0" prefWidth="310.0" text="Проверить подпись" />
+            <Button fx:id="signStatus" layoutX="462.0" layoutY="491.0" mnemonicParsing="false" onAction="#onSignButtonClick" prefHeight="25.0" prefWidth="310.0" />
+            <Label layoutX="26.0" layoutY="6.0" text="PrivateKey" />
+            <Label layoutX="27.0" layoutY="52.0" text="Public Key" />
+            <Label layoutX="8.0" layoutY="31.0" text="w:" />
+            <Label layoutX="9.0" layoutY="77.0" text="p:" />
+            <TextField fx:id="publicKeyLeftQ" layoutX="26.0" layoutY="98.0" prefHeight="25.0" prefWidth="310.0" promptText="publicKey.q" />
+            <Label layoutX="9.0" layoutY="102.0" text="q:" />
+            <TextField fx:id="publicKeyLeftG" layoutX="26.0" layoutY="124.0" prefHeight="25.0" prefWidth="310.0" promptText="publicKey.g" />
+            <Label layoutX="9.0" layoutY="128.0" text="g:" />
+            <TextField fx:id="publicKeyLeftY" layoutX="26.0" layoutY="149.0" prefHeight="25.0" prefWidth="310.0" promptText="publicKey.y" />
+            <Label layoutX="9.0" layoutY="153.0" text="y:" />
+            <Label layoutX="27.0" layoutY="399.0" text="Sign" />
+            <TextField fx:id="signLeftS1" layoutX="26.0" layoutY="416.0" prefHeight="25.0" prefWidth="310.0" promptText="Sign.s1" />
+            <TextField fx:id="signLeftS2" layoutX="26.0" layoutY="441.0" prefHeight="25.0" prefWidth="310.0" promptText="Sign.s2" />
+            <Label layoutX="9.0" layoutY="420.0" text="s1:" />
+            <Label layoutX="6.0" layoutY="445.0" text="s2:" />
+            <TextArea fx:id="messageAreaRight" layoutX="462.0" layoutY="199.0" prefHeight="200.0" prefWidth="310.0" promptText="Message" />
+            <TextField fx:id="publicKeyRightQ" layoutX="462.0" layoutY="98.0" prefHeight="25.0" prefWidth="310.0" promptText="PublicKey.q" />
+            <TextField fx:id="publicKeyRightG" layoutX="462.0" layoutY="124.0" prefHeight="25.0" prefWidth="310.0" promptText="PublicKey.g" />
+            <TextField fx:id="publicKeyRightY" layoutX="462.0" layoutY="149.0" prefHeight="25.0" prefWidth="310.0" promptText="PublicKey.y" />
+            <Label layoutX="462.0" layoutY="52.0" text="Public Key" />
+            <Label layoutX="446.0" layoutY="77.0" text="p:" />
+            <Label layoutX="446.0" layoutY="102.0" text="q:" />
+            <Label layoutX="446.0" layoutY="128.0" text="g:" />
+            <Label layoutX="447.0" layoutY="153.0" text="y:" />
+            <TextField fx:id="signRightS1" layoutX="462.0" layoutY="416.0" prefHeight="25.0" prefWidth="310.0" promptText="Sign.s1" />
+            <TextField fx:id="signRightS2" layoutX="462.0" layoutY="441.0" prefHeight="25.0" prefWidth="310.0" promptText="Sign.s2" />
+            <Label layoutX="462.0" layoutY="399.0" text="Sign" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
