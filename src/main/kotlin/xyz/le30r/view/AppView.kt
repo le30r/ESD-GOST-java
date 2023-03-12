@@ -1,21 +1,25 @@
 package xyz.le30r.view
 
-import javafx.scene.Parent
+
 import tornadofx.*
+import xyz.le30r.controller.ApplicationController
 
 class AppView : View() {
-    override val root =
-        borderpane {
-            top<TopView>()
-            bottom<BottomView>()
+    val controller: ApplicationController by inject()
+    private val input = InputView()
+    private val validation = ValidationView()
+    override val root = borderpane {
+        top = input.root
+        center = button("Копировать >>") {
+            action {
+                validation.setFields(
+                    controller.pair,
+                    input.message.text,
+                    controller.sign
+                )
+            }
+        }
+        bottom = validation.root
+
     }
-}
-
-class TopView: View() {
-    override val root = label("Top View")
-}
-
-
-class BottomView: View() {
-    override val root = label("Bottom View")
 }
